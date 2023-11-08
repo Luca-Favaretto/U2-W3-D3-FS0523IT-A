@@ -7,7 +7,10 @@
 @import "./bootstrap/scss/variables";
 
 // 4. Include any default map overrides here
-
+.dropdown-menu[data-bs-popper] {
+  left: -250px !important;
+  width: 400px;
+}
 // 5. Include remainder of required parts
 
 // scss-docs-start import-stack
@@ -62,3 +65,12 @@
 @import "./bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+.height450 {
+  height: 450px;
+}
+.height100percent {
+  height: 100%;
+}
+.objevt-cover {
+  object-fit: cover;
+}

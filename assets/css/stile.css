@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.dropdown-menu[data-bs-popper] {
+  left: -250px !important;
+  width: 400px;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11278,4 +11283,28 @@ progress {
   .d-print-none {
     display: none !important;
   }
+}
+.height450 {
+  height: 450px;
+}
+
+.height100percent {
+  height: 100%;
+}
+
+.objevt-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h1, .h1 {
+  font-size: 4em;
 }/*# sourceMappingURL=stile.css.map */
