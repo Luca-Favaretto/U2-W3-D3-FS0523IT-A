@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../../U2-W2/U2-W2-D4-FS0523IT-A/bootstrap"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "U2-W3-D3-FS0523IT-A"
+  }
+}
