@@ -24,18 +24,21 @@ window.onload = () => {
         container.appendChild(col);
       })
     )
+    .then(() => {
+      const DELETE_BTN = Array.from(
+        document.getElementsByClassName("delete-btn")
+      );
+
+      DELETE_BTN.forEach(btn => {
+        btn.addEventListener("click", function (event) {
+          let relativCard = event.target.closest(".card");
+          relativCard.remove();
+        });
+      });
+    })
     .catch(err => console.log(err));
-  const DELETE_BTN = document.getElementsByClassName("delete-btn");
-  const CARD = document.getElementsByClassName("card");
-  console.log(DELETE_BTN);
-  console.log(CARD);
-  DELETE_BTN.onclick = deleteCard;
 };
 
-const deleteCard = function (CARD) {
-  CARD.
-
-};
 const addCard = function () {
   const ADD_BTN = document.getElementsByClassName("add-btn");
 };
