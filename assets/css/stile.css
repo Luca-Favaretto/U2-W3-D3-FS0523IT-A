@@ -11307,4 +11307,10 @@ progress {
 
 h1, .h1 {
   font-size: 4em;
+}
+
+#carrello div span {
+  text-overflow: ellipsis;
+  display: block;
+  overflow-x: hidden;
 }/*# sourceMappingURL=stile.css.map */

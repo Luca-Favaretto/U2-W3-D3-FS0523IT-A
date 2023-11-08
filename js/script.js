@@ -2,8 +2,7 @@ window.onload = () => {
   const container = document.getElementById("container-card");
   const carrello = document.getElementById("carrello");
   let bookArray = [];
-
-  fetch("https://striveschool-api.herokuapp.com/books")
+  let bookPrice = fetch("https://striveschool-api.herokuapp.com/books")
     .then(response => response.json())
     .then(booksObj => {
       booksObj.forEach(book => {
@@ -12,13 +11,13 @@ window.onload = () => {
         const card = document.createElement("div");
         card.classList = "card";
         card.innerHTML = `
-          <div class="height450">
+          
             <img
               src="${book.img}"
-              class="card-img-top height100percent object-cover"
+              class="card-img-top height450 object-cover"
               alt="img of relative book"
             />
-          </div>
+         
           <div class="card-body">
             <h5 class="card-title">${book.title}</h5>
             <p class="card-text">Price: ${book.price} $</p>
@@ -34,12 +33,18 @@ window.onload = () => {
         const DELETE_BTN = card.querySelector(".delete-btn");
 
         ADD_BTN.addEventListener("click", function () {
-          bookArray.push(book.title);
-          localStorage.setItem("book", JSON.stringify(bookArray));
-          updateCarrello();
+          if (!bookArray.includes(book.title)) {
+            bookArray.push(book.title);
+            localStorage.setItem("book", JSON.stringify(bookArray));
+            updateCarrello();
+          }
         });
+        DELETE_BTN.addEventListener("click", function (e) {
+          const card = e.target.closest(".col-12");
+          if (card) {
+            card.remove();
+          }
 
-        DELETE_BTN.addEventListener("click", function () {
           const index = bookArray.indexOf(book.title);
           if (index > -1) {
             bookArray.splice(index, 1);
