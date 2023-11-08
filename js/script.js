@@ -35,6 +35,20 @@ window.onload = () => {
           relativCard.remove();
         });
       });
+      const ADD_BTN = Array.from(document.getElementsByClassName("add-btn"));
+      ADD_BTN.forEach(btn => {
+        btn.addEventListener("click", function (event) {
+          let relativCardTitol = event.target
+            .closest(".card")
+            .querySelector("div > h5").innerHTML;
+          console.log(relativCardTitol);
+
+          const carrello = document.getElementById("carrello");
+          let li = document.createElement("li");
+          li.innerText = relativCardTitol;
+          carrello.appendChild(li);
+        });
+      });
     })
     .catch(err => console.log(err));
 };
